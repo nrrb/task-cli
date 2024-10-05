@@ -35,6 +35,8 @@ class TestCommandLineHandler(unittest.TestCase):
             handler.handle("list", ["in-progress"])
             # No change in the count since there are no tasks with status in-progress
             self.assertEqual(mock_print.call_count, 6) 
+            handler.handle("list", ["not-done"])
+            self.assertEqual(mock_print.call_count, 9)
 
     @patch("builtins.open", new_callable=mock_open, read_data="[]")
     @patch("os.path.exists", return_value=False)

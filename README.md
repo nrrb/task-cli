@@ -37,10 +37,16 @@ You can list all tasks:
 python task-cli.add list
 ```
 
-Or you can list tasks by status (to-do, in-progress, or done):
+You can list tasks by status (to-do, in-progress, or done):
 
 ```bash
 python task-cli.py list to-do
+```
+
+You can list tasks that are not done (i.e. that have a status of to-do or in-progress):
+
+```bash
+python task-cli.py list not-done
 ```
 
 ### Update a Task
