@@ -45,7 +45,7 @@ python task-cli.py list to-do
 
 ### Update a Task
 
-Given the unique ID for a task that's already been added (you get this when you add a task or list tasks), you can change the description for that task.
+Given the unique ID for a task that's already been added (you get this when you add a task or list tasks), you can change the description for that task:
 
 ```bash
 python task-cli.py update e641c "Take vitamins."
@@ -53,10 +53,19 @@ python task-cli.py update e641c "Take vitamins."
 
 ### Delete a Task
 
-Given the unique ID for a task that's already been added (you get this when you add a task or list tasks), you can delete that task.
+Given the unique ID for a task that's already been added (you get this when you add a task or list tasks), you can delete that task:
 
 ```bash
 python task-cli.py delete e641c
+```
+
+# Mark a Task as in-progress or done
+
+Given the unique ID for a task that's already been added, you can update the status on that task to in-progress or done with:
+
+```bash
+python task-cli.py mark-in-progress 2a622
+python task-cli.py mark-done eb0db
 ```
 
 ## Running Tests

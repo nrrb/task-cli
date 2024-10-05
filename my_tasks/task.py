@@ -29,3 +29,11 @@ class Task:
     @update_timestamp
     def update_description(self, new_description: str):
         self.description = new_description
+
+    @update_timestamp
+    def mark_in_progress(self):
+        self.status = 'in-progress'
+
+    @update_timestamp
+    def mark_done(self):
+        self.status = 'done'
