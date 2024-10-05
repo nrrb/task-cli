@@ -51,6 +51,14 @@ Given the unique ID for a task that's already been added (you get this when you 
 python task-cli.py update e641c "Take vitamins."
 ```
 
+### Delete a Task
+
+Given the unique ID for a task that's already been added (you get this when you add a task or list tasks), you can delete that task.
+
+```bash
+python task-cli.py delete e641c
+```
+
 ## Running Tests
 
 Run:
