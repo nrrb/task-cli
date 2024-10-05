@@ -1,7 +1,6 @@
 # task-cli
 
-MANAGE ALL THE TASKS!! 
-:bookmark: :bookmark: :bookmark: :bookmark: :bookmark: :bookmark: :bookmark: :bookmark: :bookmark: 
+MANAGE ALL THE TASKS!! 📑
 
 Using [this great project idea starter](https://roadmap.sh/projects/task-tracker) on [roadmap.sh](https://roadmap.sh), this is a fun and simple Python script that you could make with the skills you'd learn from a Python beginner tutorial. 
 
