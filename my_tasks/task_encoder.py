@@ -1,4 +1,4 @@
-from .task import Task
+from my_tasks.task import Task
 import json
 
 
