@@ -23,6 +23,34 @@ git clone https://github.com/nrrb/number-guessing-game.git
 python task-cli.py
 ```
 
+### Add a Task
+
+```bash
+python task-cli.py add "Water the roses."
+```
+
+### List Tasks
+
+You can list all tasks:
+
+```bash
+python task-cli.add list
+```
+
+Or you can list tasks by status (to-do, in-progress, or done):
+
+```bash
+python task-cli.py list to-do
+```
+
+### Update a Task
+
+Given the unique ID for a task that's already been added (you get this when you add a task or list tasks), you can change the description for that task.
+
+```bash
+python task-cli.py update e641c "Take vitamins."
+```
+
 ## Running Tests
 
 Run:
