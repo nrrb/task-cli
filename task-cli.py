@@ -1,3 +1,4 @@
+#!/bin/python3
 from datetime import datetime
 import json
 import os
@@ -63,19 +64,22 @@ class CommandLineHandler:
 
     def handle(self, verb, arguments):
         if verb not in self.acceptable_verbs:
-            return 1
+            print(f"Unacceptable verb: {verb}")
+            print(f"Acceptable verbs: {self.acceptable_verbs}")
+            return False
         if verb == 'add':
             task = Task(' '.join(arguments))
             self.tasks.append(task)
             print(f"Task added successfully (ID: {task.id})")
+        return True
 
     def run(self):
         if len(sys.argv) == 1:
             sys.exit(1)
         verb, arguments = sys.argv[1], sys.argv[2:]
-        self.handle(verb, arguments)
-        with open(self.file, 'w') as f:
-            json.dump(self.tasks, f, cls=TaskEncoder, indent=4)
+        if self.handle(verb, arguments):
+            with open(self.file, 'w') as f:
+                json.dump(self.tasks, f, cls=TaskEncoder, indent=4)
 
 
 if __name__=="__main__":
