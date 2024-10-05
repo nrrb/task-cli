@@ -47,3 +47,11 @@ class CommandLineHandler:
                 for task in self.tasks:
                     if task.status == status:
                         print(task)
+        if verb == 'update':
+            task_id, new_description = arguments
+            for task in self.tasks:
+                if task.id == task_id:
+                    task.update_description(new_description)
+                    self.save_tasks()
+                    print(f"Task updated successfully (ID: {task.id})")
+                    break
