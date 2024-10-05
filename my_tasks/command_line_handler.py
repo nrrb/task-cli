@@ -47,6 +47,10 @@ class CommandLineHandler:
                 for task in self.tasks:
                     if task.status == status:
                         print(task)
+            elif arguments[0] == 'not-done':
+                for task in self.tasks:
+                    if task.status != 'done':
+                        print(task)
         if verb == 'update':
             task_id, new_description = arguments
             for task in self.tasks:
