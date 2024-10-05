@@ -55,3 +55,11 @@ class CommandLineHandler:
                     self.save_tasks()
                     print(f"Task updated successfully (ID: {task.id})")
                     break
+        if verb == 'delete':
+            task_id = arguments[0]
+            for task in self.tasks:
+                if task.id == task_id:
+                    self.tasks.remove(task)
+                    self.save_tasks()
+                    print(f"Task deleted successfully (ID: {task.id})")
+                    break
