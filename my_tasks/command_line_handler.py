@@ -1,5 +1,5 @@
-from .task import Task
-from .task_encoder import TaskEncoder
+from my_tasks.task import Task
+from my_tasks.task_encoder import TaskEncoder
 from datetime import datetime
 import json
 import os
