@@ -22,3 +22,11 @@ git clone https://github.com/nrrb/number-guessing-game.git
 ```bash
 python task-cli.py
 ```
+
+## Running Tests
+
+Run:
+
+```bash
+python3 -m unittest discover tests
+```
