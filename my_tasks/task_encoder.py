@@ -1,5 +1,5 @@
-from my_tasks.task import Task
 import json
+from my_tasks.task import Task
 
 
 class TaskEncoder(json.JSONEncoder):
