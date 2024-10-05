@@ -4,7 +4,7 @@ from my_tasks.task import Task
 
 class TaskEncoder(json.JSONEncoder):
 
-    def default(self, obj):
+    def default(self, obj: Task) -> dict:
         if isinstance(obj, Task):
             return {
                 "id": obj.id,

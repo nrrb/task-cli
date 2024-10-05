@@ -7,11 +7,11 @@ from my_tasks.task_encoder import TaskEncoder
 
 class CommandLineHandler:
 
-    def __init__(self, filename='tasks.json'):
+    def __init__(self, filename: str = 'tasks.json'):
         self.filename = filename
         self.tasks = self.load_tasks()
 
-    def load_tasks(self):
+    def load_tasks(self) -> list:
         if not os.path.exists(self.filename):
             with open(self.filename, 'w') as f:
                 json.dump([], f)
@@ -32,7 +32,7 @@ class CommandLineHandler:
         with open(self.filename, 'w') as f:
             json.dump(self.tasks, f, cls=TaskEncoder, indent=4)
 
-    def handle(self, verb, arguments):
+    def handle(self, verb: str, arguments: list):
         if verb == 'add':
             task = Task(' '.join(arguments))
             self.tasks.append(task)
