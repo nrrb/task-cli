@@ -9,3 +9,32 @@ class TestCommandLineHandler(unittest.TestCase):
     def test_initialization_creates_empty_file(self, mock_exists, mock_open_file):
         handler = CommandLineHandler()
         mock_open_file.assert_any_call("tasks.json", "w")
+
+    @patch("builtins.open", new_callable=mock_open, read_data="[]")
+    @patch("os.path.exists", return_value=False)
+    def test_handle_add(self, mock_exists, mock_open_file):
+        handler = CommandLineHandler()
+        with patch("builtins.open") as mock_open:
+            handler.handle("add", ["Buy milk"])
+            self.assertEqual(len(handler.tasks), 1)
+            self.assertEqual(handler.tasks[0].description, "Buy milk")
+            mock_open.assert_called_with("tasks.json", "w")
+
+    @patch("builtins.open", new_callable=mock_open, read_data="[]")
+    @patch("os.path.exists", return_value=False)
+    def test_handle_list(self, mock_exists, mock_open_file):
+        handler = CommandLineHandler()
+        handler.handle("add", ["Buy milk"])
+        handler.handle("add", ["Buy eggs"])
+        handler.handle("add", ["Buy bread"])
+        with patch("builtins.print") as mock_print:
+            handler.handle("list", [])
+            self.assertEqual(mock_print.call_count, 3)
+            handler.handle("list", ["to-do"])
+            self.assertEqual(mock_print.call_count, 6)
+            handler.handle("list", ["in-progress"])
+            # No change in the count since there are no tasks with status in-progress
+            self.assertEqual(mock_print.call_count, 6) 
+
+if __name__ == '__main__':
+    unittest.main()

@@ -8,3 +8,7 @@ class TestTaskEncoder(unittest.TestCase):
         task = Task("Test task", id="abcde")
         task_json = json.dumps(task, cls=TaskEncoder)
         self.assertIn('"description": "Test task"', task_json)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -38,3 +38,12 @@ class CommandLineHandler:
             self.tasks.append(task)
             self.save_tasks()
             print(f"Task added successfully (ID: {task.id})")
+        if verb == 'list':
+            if len(arguments) == 0:
+                for task in self.tasks:
+                    print(task)
+            elif arguments[0] in ['to-do', 'done', 'in-progress']:
+                status = arguments[0]
+                for task in self.tasks:
+                    if task.status == status:
+                        print(task)
