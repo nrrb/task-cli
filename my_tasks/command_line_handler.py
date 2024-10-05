@@ -63,3 +63,19 @@ class CommandLineHandler:
                     self.save_tasks()
                     print(f"Task deleted successfully (ID: {task.id})")
                     break
+        if verb == 'mark-in-progress':
+            task_id = arguments[0]
+            for task in self.tasks:
+                if task.id == task_id:
+                    task.mark_in_progress()
+                    self.save_tasks()
+                    print(f"Task marked as in-progress (ID: {task.id})")
+                    break
+        if verb == 'mark-done':
+            task_id = arguments[0]
+            for task in self.tasks:
+                if task.id == task_id:
+                    task.mark_done()
+                    self.save_tasks()
+                    print(f"Task marked as done (ID: {task.id})")
+                    break

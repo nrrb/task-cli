@@ -20,5 +20,24 @@ class TestTask(unittest.TestCase):
         self.assertEqual(task.description, "Updated task")
         self.assertGreater(new_updated_at, old_updated_at)
 
+    def test_task_mark_in_progress(self):
+        task = Task("Test task")
+        old_updated_at = task.updatedAt
+        time.sleep(0.1)
+        task.mark_in_progress()
+        new_updated_at = task.updatedAt
+        self.assertEqual(task.status, "in-progress")
+        self.assertGreater(new_updated_at, old_updated_at)
+
+    def test_task_mark_done(self):
+        task = Task("Test task")
+        old_updated_at = task.updatedAt
+        time.sleep(0.1)
+        task.mark_done()
+        new_updated_at = task.updatedAt
+        self.assertEqual(task.status, "done")
+        self.assertGreater(new_updated_at, old_updated_at)
+
+
 if __name__ == '__main__':
     unittest.main()

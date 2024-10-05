@@ -2,9 +2,9 @@
     {
         "id": "e641c",
         "description": "Write Python code.",
-        "status": "to-do",
+        "status": "in-progress",
         "createdAt": "2024-10-04T23:21:24.909534",
-        "updatedAt": "2024-10-04T23:21:24.909540"
+        "updatedAt": "2024-10-05T17:46:30.873490"
     },
     {
         "id": "5251b",
@@ -16,9 +16,9 @@
     {
         "id": "2a622",
         "description": "Write more Python code.",
-        "status": "to-do",
+        "status": "in-progress",
         "createdAt": "2024-10-04T23:21:42.819998",
-        "updatedAt": "2024-10-04T23:21:42.820008"
+        "updatedAt": "2024-10-05T17:46:42.332289"
     },
     {
         "id": "d8ed8",
@@ -30,16 +30,16 @@
     {
         "id": "7b492",
         "description": "Buy grapes.",
-        "status": "to-do",
+        "status": "done",
         "createdAt": "2024-10-04T23:21:58.158275",
-        "updatedAt": "2024-10-05T16:56:17.619773"
+        "updatedAt": "2024-10-05T17:47:02.283097"
     },
     {
         "id": "eb0db",
         "description": "Restructure my project code.",
-        "status": "to-do",
+        "status": "done",
         "createdAt": "2024-10-04T23:45:57.830313",
-        "updatedAt": "2024-10-04T23:45:57.830318"
+        "updatedAt": "2024-10-05T17:46:54.175576"
     },
     {
         "id": "4c3fb",
